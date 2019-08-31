@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: #90a;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var animation = function (t, b, c, d) {
+        return c * t / d + b;
+    }
+
+    /**
+     * 2s 后元素宽度变为  500px
+     */
+
+    var t = 0
+    var b = 200
+    var c = 300
+    var d = 2000
+    var jiange = 10
+    var time = setInterval(function () {
+       t += jiange
+       var q = animation(t, b, c, d)
+        box.style.width = q + 'px'
+        if(t > 2000){
+            clearInterval(time)
+        }
+    },jiange)
+
+
+
+    // var t = 0
+    // var b = 0
+    // var c = 52
+    // var d = 3000
+    // var jiange = 10
+    // var timer = setInterval(function () {
+    //     t += jiange
+    //     var red = linear()
+    //     var val = linear(t,b,c,time)
+    //     box.style.background = 'rgb('+val+'0,0)'
+    //
+    //     if (t >= timer) {
+    //         clearTimeout(timer)
+    //     }
+    // },jiange)
+</script>
+</body>
+</html>
